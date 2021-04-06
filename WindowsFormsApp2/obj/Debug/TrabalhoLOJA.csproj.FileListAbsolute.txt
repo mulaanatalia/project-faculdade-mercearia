@@ -11,3 +11,5 @@ D:\Faculdade\II ano\II Semestre\ProgramacaoC#\Codigos\Trabalhos\TrabalhoFinal\Wi
 D:\Faculdade\II ano\II Semestre\ProgramacaoC#\Codigos\Trabalhos\TrabalhoFinal\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.F_Actualizar.resources
 D:\Faculdade\II ano\II Semestre\ProgramacaoC#\Codigos\Trabalhos\TrabalhoFinal\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.F_Adicionar.resources
 D:\Faculdade\II ano\II Semestre\ProgramacaoC#\Codigos\Trabalhos\TrabalhoFinal\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.F_Eliminar.resources
+D:\Faculdade\II ano\II Semestre\ProgramacaoC#\Codigos\Trabalhos\TrabalhoFinal\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.F_compra.resources
+D:\Faculdade\II ano\II Semestre\ProgramacaoC#\Codigos\Trabalhos\TrabalhoFinal\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.F_Produtos.resources

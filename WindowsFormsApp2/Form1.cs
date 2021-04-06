@@ -26,5 +26,21 @@ namespace WindowsFormsApp2
             this.Hide();
 
         }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            F_compra fc = new F_compra();
+            fc.FormClosed += (s, args) => this.Show();
+            fc.Show();
+            this.Hide();
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            F_Produtos fp = new F_Produtos();
+            fp.FormClosed += (s, args) => this.Show();
+            fp.Show();
+            this.Hide();
+        }
     }
 }
