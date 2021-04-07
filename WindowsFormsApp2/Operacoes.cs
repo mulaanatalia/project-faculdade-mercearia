@@ -81,5 +81,64 @@ namespace WindowsFormsApp2
             comando.Parameters.Clear();
             return dt;
         }
+        public DataTable pegaProdutoNome(string nome)
+        {
+            comando.CommandText = "select prod_nome as Produto, prod_marca as Marca" +
+                ", prod_descricao as Descricao, prod_preco as Preco from produto where prod_nome like '" + nome + "%'";
+            DataTable dt = new DataTable();
+            try
+            {
+                comando.Connection = conexao.Conectar();
+                MySqlDataAdapter da = new MySqlDataAdapter(comando);
+                da.Fill(dt);
+                conexao.Desconectar();
+                mensagem = "Consulta feita com sucesso";
+            }
+            catch (MySqlException)
+            {
+                mensagem = "Falha na consulta";
+            }
+            comando.Parameters.Clear();
+            return dt;
+        }
+        public DataTable pegaProdutoMarca(string marca)
+        {
+            comando.CommandText = "select prod_cod as Codigo, prod_nome as Produto, prod_marca as Marca" +
+                ", prod_descricao as Descricao, prod_preco as Preco from produto where prod_marca like '" + marca + "%'";
+            DataTable dt = new DataTable();
+            try
+            {
+                comando.Connection = conexao.Conectar();
+                MySqlDataAdapter da = new MySqlDataAdapter(comando);
+                da.Fill(dt);
+                conexao.Desconectar();
+                mensagem = "Consulta feita com sucesso";
+            }
+            catch (MySqlException)
+            {
+                mensagem = "Falha na consulta";
+            }
+            comando.Parameters.Clear();
+            return dt;
+        }
+        public void apagarProduto(int id)
+        {
+            comando.CommandText = "delete from produto where prod_cod = "+id;
+            try
+            {
+                comando.Connection = conexao.Conectar();
+                comando.ExecuteNonQuery();
+                conexao.Desconectar();
+                mensagem = "Produto apagado";
+            }
+            catch (MySqlException)
+            {
+                mensagem = "Erro ao apagar produto";
+            }
+            comando.Parameters.Clear();
+
+        }
+
+
     }
 }

@@ -12,6 +12,8 @@ namespace WindowsFormsApp2
 {
     public partial class F_Eliminar : Form
     {
+        private Validar validar = new Validar();
+        private Operacoes operacao = new Operacoes();
         public F_Eliminar()
         {
             InitializeComponent();
@@ -31,6 +33,47 @@ namespace WindowsFormsApp2
             fa.FormClosed += (s, args) => this.Close();
             fa.Show();
             this.Hide();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                validar.Campo(txtProduto.Text);
+                string termo = cbTermo.Text;
+                if (termo.Equals("Id"))
+                {
+                    dtvProd.DataSource = operacao.pegaProdutoId(int.Parse(txtProduto.Text));
+                    MessageBox.Show(operacao.getMensagem);
+                }
+                else
+                {
+                    if (termo.Equals("Marca"))
+                    {
+                        dtvProd.DataSource = operacao.pegaProdutoMarca(txtProduto.Text);
+                        MessageBox.Show(operacao.getMensagem);
+                    }
+                    else
+                    {
+                        dtvProd.DataSource = operacao.pegaProdutoNome(txtProduto.Text);
+                        MessageBox.Show(operacao.getMensagem);
+                    }   
+                }
+            }
+            catch (ArgumentException)
+            {
+                MessageBox.Show("Preencha o campo", "Entrada invalida", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Insira um numero Inteiro", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            //string id = dtvProd.SelectedCells;
         }
     }
 }
