@@ -49,6 +49,11 @@ namespace WindowsFormsApp2
         {
             
             dtvProduto.DataSource = (operacao.pegaProdutoId((int) upID.Value));
+            string prod = (string)dtvProduto.Rows[0].Cells[0].Value;
+            string marca = (string)dtvProduto.Rows[0].Cells[1].Value;
+            txtNome.Text = prod;
+            txtMarca.Text = marca;
+
             MessageBox.Show(operacao.getMensagem);
         }
 
@@ -62,8 +67,8 @@ namespace WindowsFormsApp2
                 {
                     throw new ArgumentException();
                 }
-                int c= (int) MessageBox.Show("Tem a certeza que deseja modificar essas informacoes?", "Aviso!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-                if (c == 1)
+                int c = (int) MessageBox.Show("Tem a certeza que deseja modificar essas informacoes?", "Aviso!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                if (c == 6)
                 {
                     operacao.actualizarProduto((int)upID.Value, txtMarca.Text, txtNome.Text, (float)upPreco.Value);
                     MessageBox.Show(operacao.getMensagem, "Relatorio", MessageBoxButtons.OK, MessageBoxIcon.Information);
