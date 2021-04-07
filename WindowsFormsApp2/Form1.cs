@@ -19,7 +19,6 @@ namespace WindowsFormsApp2
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            //Mostra a tela de actualizar
             F_Actualizar fa = new F_Actualizar();
             fa.FormClosed += (s, args)=> this.Show();
             fa.Show();
@@ -41,6 +40,11 @@ namespace WindowsFormsApp2
             fp.FormClosed += (s, args) => this.Show();
             fp.Show();
             this.Hide();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

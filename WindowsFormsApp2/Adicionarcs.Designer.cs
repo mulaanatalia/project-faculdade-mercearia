@@ -29,20 +29,21 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtProdNome = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.txtProdMarca = new System.Windows.Forms.TextBox();
+            this.rxtDescricao = new System.Windows.Forms.RichTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.actualizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.upPreco = new System.Windows.Forms.NumericUpDown();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.upPreco)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -55,19 +56,19 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Adicionar";
             // 
-            // textBox1
+            // txtProdNome
             // 
-            this.textBox1.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(51, 132);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(215, 29);
-            this.textBox1.TabIndex = 2;
+            this.txtProdNome.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProdNome.Location = new System.Drawing.Point(153, 139);
+            this.txtProdNome.Name = "txtProdNome";
+            this.txtProdNome.Size = new System.Drawing.Size(215, 29);
+            this.txtProdNome.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(92, 92);
+            this.label2.Location = new System.Drawing.Point(9, 142);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(135, 21);
             this.label2.TabIndex = 3;
@@ -86,70 +87,63 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(78, 178);
+            this.label4.Location = new System.Drawing.Point(12, 232);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(49, 21);
             this.label4.TabIndex = 5;
             this.label4.Text = "Preço";
             // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(51, 217);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(92, 29);
-            this.textBox2.TabIndex = 6;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(197, 178);
+            this.label5.Location = new System.Drawing.Point(193, 228);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 21);
             this.label5.TabIndex = 7;
             this.label5.Text = "Marca";
             // 
-            // textBox3
+            // txtProdMarca
             // 
-            this.textBox3.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(174, 217);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(92, 29);
-            this.textBox3.TabIndex = 8;
+            this.txtProdMarca.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProdMarca.Location = new System.Drawing.Point(245, 224);
+            this.txtProdMarca.Name = "txtProdMarca";
+            this.txtProdMarca.Size = new System.Drawing.Size(123, 29);
+            this.txtProdMarca.TabIndex = 8;
             // 
-            // richTextBox1
+            // rxtDescricao
             // 
-            this.richTextBox1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(47, 309);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(215, 152);
-            this.richTextBox1.TabIndex = 9;
-            this.richTextBox1.Text = "";
+            this.rxtDescricao.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.rxtDescricao.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rxtDescricao.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rxtDescricao.Location = new System.Drawing.Point(16, 309);
+            this.rxtDescricao.Name = "rxtDescricao";
+            this.rxtDescricao.Size = new System.Drawing.Size(337, 152);
+            this.rxtDescricao.TabIndex = 9;
+            this.rxtDescricao.Text = "";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(58, 265);
+            this.label6.Location = new System.Drawing.Point(15, 285);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(77, 21);
             this.label6.TabIndex = 10;
-            this.label6.Text = "Discreção";
+            this.label6.Text = "Descrição";
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Tan;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(170, 467);
+            this.button1.Location = new System.Drawing.Point(261, 479);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(92, 35);
             this.button1.TabIndex = 11;
             this.button1.Text = "Adicionar";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // menuStrip1
             // 
@@ -177,22 +171,35 @@
             this.eliminarToolStripMenuItem.Text = "Eliminar";
             this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.EliminarToolStripMenuItem_Click);
             // 
+            // upPreco
+            // 
+            this.upPreco.Font = new System.Drawing.Font("Leelawadee UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.upPreco.Location = new System.Drawing.Point(67, 229);
+            this.upPreco.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.upPreco.Name = "upPreco";
+            this.upPreco.Size = new System.Drawing.Size(120, 25);
+            this.upPreco.TabIndex = 13;
+            // 
             // F_Adicionar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(380, 526);
+            this.Controls.Add(this.upPreco);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.rxtDescricao);
+            this.Controls.Add(this.txtProdMarca);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtProdNome);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -202,6 +209,7 @@
             this.Text = "Adicionar";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.upPreco)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -210,18 +218,18 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtProdNome;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.TextBox txtProdMarca;
+        private System.Windows.Forms.RichTextBox rxtDescricao;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem actualizarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
+        private System.Windows.Forms.NumericUpDown upPreco;
     }
 }

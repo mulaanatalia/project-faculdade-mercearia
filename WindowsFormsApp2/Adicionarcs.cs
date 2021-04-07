@@ -12,6 +12,8 @@ namespace WindowsFormsApp2
 {
     public partial class F_Adicionar : Form
     {
+        public Validar validar = new Validar();
+        private Operacoes operacao = new Operacoes();
         public F_Adicionar()
         {
             InitializeComponent();
@@ -31,6 +33,28 @@ namespace WindowsFormsApp2
             fa.FormClosed += (s, args) => this.Close();
             fa.Show();
             this.Hide();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            try {
+                /*Validar os campos*/
+                validar.Campo(txtProdNome.Text);
+                validar.Campo(txtProdMarca.Text);
+                validar.Campo(rxtDescricao.Text);
+                if (upPreco.Value <= 0)
+                {
+                    throw new ArgumentException();
+                }
+                //Adiciona o Produto
+                operacao.adicionarProduto(txtProdNome.Text, (float) upPreco.Value, txtProdMarca.Text, rxtDescricao.Text);
+                //Mensagem de confirmacao
+                MessageBox.Show(operacao.getMensagem, "Resposta da insercao", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (ArgumentException)
+            {
+                MessageBox.Show("Por favor preencha todos campos com valores validos", "Campos Vazios ou invalidos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
     }
 }

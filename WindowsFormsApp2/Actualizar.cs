@@ -12,6 +12,8 @@ namespace WindowsFormsApp2
 {
     public partial class F_Actualizar : Form
     {
+        public Validar validar = new Validar();
+        private Operacoes operacao = new Operacoes();
         public F_Actualizar()
         {
             InitializeComponent();
@@ -31,6 +33,46 @@ namespace WindowsFormsApp2
             fe.FormClosed += (s, args) => this.Close();
             fe.Show();
             this.Hide();
+        }
+
+        private void Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            
+            dtvProduto.DataSource = (operacao.pegaProdutoId((int) upID.Value));
+            MessageBox.Show(operacao.getMensagem);
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                validar.Campo(txtNome.Text);
+                validar.Campo(txtMarca.Text);
+                if (upPreco.Value <= 0)
+                {
+                    throw new ArgumentException();
+                }
+                int c= (int) MessageBox.Show("Tem a certeza que deseja modificar essas informacoes?", "Aviso!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                if (c == 1)
+                {
+                    operacao.actualizarProduto((int)upID.Value, txtMarca.Text, txtNome.Text, (float)upPreco.Value);
+                    MessageBox.Show(operacao.getMensagem, "Relatorio", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (ArgumentException)
+            {
+                MessageBox.Show("Preencha os campos com valores validos", "Campos invalidos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
     }
 }

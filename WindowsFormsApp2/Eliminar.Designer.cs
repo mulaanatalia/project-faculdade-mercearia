@@ -34,12 +34,13 @@
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.adicionarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.actualizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -48,10 +49,11 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightCoral;
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.textBox5);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.textBox4);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Location = new System.Drawing.Point(12, 47);
             this.panel1.Name = "panel1";
@@ -99,24 +101,6 @@
             this.Column3.HeaderText = "Marca";
             this.Column3.Name = "Column3";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(21, 86);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(25, 21);
-            this.label8.TabIndex = 15;
-            this.label8.Text = "ID";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(60, 86);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(215, 29);
-            this.textBox4.TabIndex = 14;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -153,6 +137,36 @@
             this.actualizarToolStripMenuItem.Text = "Actualizar";
             this.actualizarToolStripMenuItem.Click += new System.EventHandler(this.ActualizarToolStripMenuItem_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Honeydew;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(262, 82);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(92, 35);
+            this.button1.TabIndex = 26;
+            this.button1.Text = "Procurar";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // label10
+            // 
+            this.label10.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(5, 75);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(82, 48);
+            this.label10.TabIndex = 25;
+            this.label10.Text = "ID do Produto";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.Location = new System.Drawing.Point(98, 86);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(158, 29);
+            this.textBox5.TabIndex = 24;
+            // 
             // F_Eliminar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -183,11 +197,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem adicionarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem actualizarToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textBox5;
     }
 }
