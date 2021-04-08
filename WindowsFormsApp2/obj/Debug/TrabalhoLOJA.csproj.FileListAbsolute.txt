@@ -27,3 +27,4 @@ D:\Faculdade\II ano\II Semestre\ProgramacaoC#\Codigos\Trabalhos\TrabalhoFinal\Wi
 D:\Faculdade\II ano\II Semestre\ProgramacaoC#\Codigos\Trabalhos\TrabalhoFinal\WindowsFormsApp2\bin\Debug\MySql.Data.xml
 D:\Faculdade\II ano\II Semestre\ProgramacaoC#\Codigos\Trabalhos\TrabalhoFinal\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe.config
 D:\Faculdade\II ano\II Semestre\ProgramacaoC#\Codigos\Trabalhos\TrabalhoFinal\WindowsFormsApp2\obj\Debug\TrabalhoLOJA.csproj.CopyComplete
+D:\Faculdade\II ano\II Semestre\ProgramacaoC#\Codigos\Trabalhos\TrabalhoFinal\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.F_finalizarCompra.resources

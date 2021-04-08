@@ -78,6 +78,12 @@
     <Compile Include="F_compra.Designer.cs">
       <DependentUpon>F_compra.cs</DependentUpon>
     </Compile>
+    <Compile Include="F_finalizarCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_finalizarCompra.Designer.cs">
+      <DependentUpon>F_finalizarCompra.cs</DependentUpon>
+    </Compile>
     <Compile Include="F_Produtos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="F_compra.resx">
       <DependentUpon>F_compra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_finalizarCompra.resx">
+      <DependentUpon>F_finalizarCompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F_Produtos.resx">
       <DependentUpon>F_Produtos.cs</DependentUpon>

@@ -22,5 +22,27 @@ namespace WindowsFormsApp2
                 throw new ArgumentException();
             }
         }
+        public void telefone(string tel)
+        {
+            if (((tel.Length < 9) && (tel.Length !=0)) || (tel.Length>9))
+            {
+                throw new FormatException();
+            }
+            else
+            {
+                if (!(string.IsNullOrEmpty(tel) || string.IsNullOrWhiteSpace(tel)))
+                {
+                    try
+                    {
+                        int.Parse(tel);
+                    }
+                    catch (Exception)
+                    {
+                        throw new FormatException();
+                    }
+                }
+                
+            }
+        }
     }
 }

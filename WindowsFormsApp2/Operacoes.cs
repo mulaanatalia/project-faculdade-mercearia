@@ -158,6 +158,66 @@ namespace WindowsFormsApp2
             comando.Parameters.Clear();
 
         }
+        public void adicionarCompraCompleta(float quant, float vR, string[] nome, string bi, string tel)
+        {
+            addCliente(nome, bi, tel);
+            comando.CommandText = "insert into compra values" +
+                "(default, @quantidade, default, @vRecebido)";
+            comando.Parameters.AddWithValue("@quantidade",quant);
+            comando.Parameters.AddWithValue("@vRecebido",vR);
+            try
+            {
+                comando.Connection = conexao.Conectar();
+                comando.ExecuteNonQuery();
+                conexao.Desconectar();
+                mensagem = "Compra feita com sucesso";
+            }
+            catch (MySqlException)
+            {
+                mensagem = "Erro na efectivacao da compra";
+            }
+            comando.Parameters.Clear();
+        }
+        public void adicionarCompra(int quant, float vR)
+        {
+            comando.CommandText = "insert into compra values" +
+                "(default, @quantidade, default, @vRecebido)";
+            comando.Parameters.AddWithValue("@quantidade", quant);
+            comando.Parameters.AddWithValue("@vRecebido", vR);
+            try
+            {
+                comando.Connection = conexao.Conectar();
+                comando.ExecuteNonQuery();
+                conexao.Desconectar();
+                mensagem = "Compra feita com sucesso";
+            }
+            catch (MySqlException)
+            {
+                mensagem = "Erro na efectivacao da compra";
+            }
+            comando.Parameters.Clear();
+        }
+        private void addCliente(string []n, string bi, string tel)
+        {
+            comando.CommandText = "insert into cliente values" +
+                "(default, @pNome, @uNome, @bi, @tel)";
+            comando.Parameters.AddWithValue("@pNome", n[0]);
+            comando.Parameters.AddWithValue("@uNome", n[n.Length-1]);
+            comando.Parameters.AddWithValue("@bi", bi);
+            comando.Parameters.AddWithValue("@tel", tel);
+            try
+            {
+                comando.Connection=conexao.Conectar();
+                comando.ExecuteNonQuery();
+                conexao.Desconectar();
+
+            }
+            catch (MySqlException)
+            {
+                mensagem = "Erro ao cadastrar Cliente";
+            }
+            comando.Parameters.Clear();
+        }
 
 
     }

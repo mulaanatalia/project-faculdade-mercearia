@@ -48,26 +48,33 @@
             this.cbTermo = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.tabelasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.comprasEfectuadasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.txtTel = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.upQuantidade)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtvProd)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(354, 480);
+            this.button1.Location = new System.Drawing.Point(354, 518);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(109, 46);
             this.button1.TabIndex = 10;
             this.button1.Text = "Finalizar Compra";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(13, 499);
+            this.button2.Location = new System.Drawing.Point(12, 551);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(109, 27);
             this.button2.TabIndex = 11;
@@ -77,6 +84,8 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.txtTel);
+            this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.txtBI);
             this.panel1.Controls.Add(this.label7);
@@ -84,7 +93,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txtCPrimeiroNome);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(12, 333);
+            this.panel1.Location = new System.Drawing.Point(12, 371);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(467, 141);
             this.panel1.TabIndex = 17;
@@ -165,7 +174,7 @@
             this.panel2.Controls.Add(this.cbTermo);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(13, 12);
+            this.panel2.Location = new System.Drawing.Point(13, 50);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(466, 315);
             this.panel2.TabIndex = 18;
@@ -228,6 +237,7 @@
             this.dtvProd.Name = "dtvProd";
             this.dtvProd.Size = new System.Drawing.Size(431, 185);
             this.dtvProd.TabIndex = 17;
+            this.dtvProd.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtvProd_CellEnter);
             // 
             // cbTermo
             // 
@@ -262,15 +272,59 @@
             this.label3.TabIndex = 14;
             this.label3.Text = "DADOS PRODUTO";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tabelasToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(491, 24);
+            this.menuStrip1.TabIndex = 19;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // tabelasToolStripMenuItem
+            // 
+            this.tabelasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.comprasEfectuadasToolStripMenuItem});
+            this.tabelasToolStripMenuItem.Name = "tabelasToolStripMenuItem";
+            this.tabelasToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.tabelasToolStripMenuItem.Text = "Tabelas";
+            // 
+            // comprasEfectuadasToolStripMenuItem
+            // 
+            this.comprasEfectuadasToolStripMenuItem.Name = "comprasEfectuadasToolStripMenuItem";
+            this.comprasEfectuadasToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.comprasEfectuadasToolStripMenuItem.Text = "Compras Efectuadas";
+            // 
+            // txtTel
+            // 
+            this.txtTel.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTel.Location = new System.Drawing.Point(350, 90);
+            this.txtTel.Name = "txtTel";
+            this.txtTel.Size = new System.Drawing.Size(100, 23);
+            this.txtTel.TabIndex = 25;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(276, 96);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(53, 15);
+            this.label9.TabIndex = 24;
+            this.label9.Text = "Telefone";
+            // 
             // F_compra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(491, 534);
+            this.ClientSize = new System.Drawing.Size(491, 581);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "F_compra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Compras";
@@ -280,7 +334,10 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.upQuantidade)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtvProd)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -305,5 +362,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem tabelasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem comprasEfectuadasToolStripMenuItem;
+        private System.Windows.Forms.TextBox txtTel;
+        private System.Windows.Forms.Label label9;
     }
 }
