@@ -21,7 +21,7 @@ namespace WindowsFormsApp2
         private void F_Produtos_Load(object sender, EventArgs e)
         {
             try{
-                dtvProdutos.DataSource = operacao.pegaTabela();
+                dtvProdutos.DataSource = operacao.pegaTabelaProduto();
             }
             catch (Exception)
             {

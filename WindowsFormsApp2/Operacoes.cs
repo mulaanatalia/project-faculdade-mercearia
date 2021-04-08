@@ -82,7 +82,7 @@ namespace WindowsFormsApp2
             comando.Parameters.Clear();
             return dt;
         }
-        public DataTable pegaTabela()
+        public DataTable pegaTabelaProduto()
         {
             comando.CommandText = comando.CommandText = "select prod_cod as Codigo, prod_nome as Produto," +
                 " prod_marca as Marca" +
@@ -98,6 +98,24 @@ namespace WindowsFormsApp2
             catch (MySqlException)
             {
 
+            }
+            return dt;
+        }
+        public DataTable pegaTabelaCompra()
+        {
+            comando.CommandText = "select compra_cod as Codigo, compra_quant as Quantidade," +
+                " compra_data as `Data`, compra_valor_recebido as `Valor recebido` from compra";
+            DataTable dt = new DataTable();
+            try
+            {
+                comando.Connection = conexao.Conectar();
+                MySqlDataAdapter da = new MySqlDataAdapter(comando);
+                da.Fill(dt);
+                conexao.Desconectar();
+            }
+            catch (MySqlException)
+            {
+                mensagem = "Erro ao ler tabela de compras";
             }
             return dt;
         }

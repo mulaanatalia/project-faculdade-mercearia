@@ -94,12 +94,28 @@ namespace WindowsFormsApp2
             }
             catch (ArgumentException)
             {
-                MessageBox.Show("Informe a quantidade", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Informe a quantidade e selecione o produto a ser comprado", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             catch (FormatException)
             {
                 MessageBox.Show("Insira apenas numeros de telefone validos", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void ComprasEfectuadasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            F_tabelaCompras tc = new F_tabelaCompras();
+            tc.FormClosed += (s, args) => this.Show();
+            tc.Show();
+            this.Hide();
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            txtCPrimeiroNome.Text = "";
+            txtCUltimoNome.Text = "";
+            txtBI.Text = "";
+            txtTel.Text = "";
         }
     }
 }

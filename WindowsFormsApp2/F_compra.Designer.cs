@@ -31,6 +31,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtTel = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtBI = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -51,8 +53,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tabelasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comprasEfectuadasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.txtTel = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.upQuantidade)).BeginInit();
@@ -66,7 +66,7 @@
             this.button1.Location = new System.Drawing.Point(354, 518);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(109, 46);
-            this.button1.TabIndex = 10;
+            this.button1.TabIndex = 9;
             this.button1.Text = "Finalizar Compra";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
@@ -80,6 +80,7 @@
             this.button2.TabIndex = 11;
             this.button2.Text = "Limpar Campos";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // panel1
             // 
@@ -96,7 +97,25 @@
             this.panel1.Location = new System.Drawing.Point(12, 371);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(467, 141);
-            this.panel1.TabIndex = 17;
+            this.panel1.TabIndex = 5;
+            // 
+            // txtTel
+            // 
+            this.txtTel.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTel.Location = new System.Drawing.Point(350, 90);
+            this.txtTel.Name = "txtTel";
+            this.txtTel.Size = new System.Drawing.Size(100, 23);
+            this.txtTel.TabIndex = 8;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(276, 96);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(53, 15);
+            this.label9.TabIndex = 24;
+            this.label9.Text = "Telefone";
             // 
             // label8
             // 
@@ -114,7 +133,7 @@
             this.txtBI.Location = new System.Drawing.Point(109, 93);
             this.txtBI.Name = "txtBI";
             this.txtBI.Size = new System.Drawing.Size(150, 23);
-            this.txtBI.TabIndex = 22;
+            this.txtBI.TabIndex = 7;
             // 
             // label7
             // 
@@ -132,7 +151,7 @@
             this.txtCUltimoNome.Location = new System.Drawing.Point(350, 39);
             this.txtCUltimoNome.Name = "txtCUltimoNome";
             this.txtCUltimoNome.Size = new System.Drawing.Size(100, 23);
-            this.txtCUltimoNome.TabIndex = 20;
+            this.txtCUltimoNome.TabIndex = 6;
             // 
             // label2
             // 
@@ -150,7 +169,7 @@
             this.txtCPrimeiroNome.Location = new System.Drawing.Point(109, 39);
             this.txtCPrimeiroNome.Name = "txtCPrimeiroNome";
             this.txtCPrimeiroNome.Size = new System.Drawing.Size(150, 23);
-            this.txtCPrimeiroNome.TabIndex = 18;
+            this.txtCPrimeiroNome.TabIndex = 5;
             // 
             // label1
             // 
@@ -177,7 +196,7 @@
             this.panel2.Location = new System.Drawing.Point(13, 50);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(466, 315);
-            this.panel2.TabIndex = 18;
+            this.panel2.TabIndex = 0;
             // 
             // button3
             // 
@@ -185,7 +204,7 @@
             this.button3.Location = new System.Drawing.Point(349, 41);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(100, 27);
-            this.button3.TabIndex = 19;
+            this.button3.TabIndex = 3;
             this.button3.Text = "Pesquisar";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.Button3_Click);
@@ -206,7 +225,7 @@
             this.txtProduto.Location = new System.Drawing.Point(228, 44);
             this.txtProduto.Name = "txtProduto";
             this.txtProduto.Size = new System.Drawing.Size(100, 23);
-            this.txtProduto.TabIndex = 20;
+            this.txtProduto.TabIndex = 2;
             // 
             // label5
             // 
@@ -224,7 +243,7 @@
             this.upQuantidade.Location = new System.Drawing.Point(109, 275);
             this.upQuantidade.Name = "upQuantidade";
             this.upQuantidade.Size = new System.Drawing.Size(120, 23);
-            this.upQuantidade.TabIndex = 18;
+            this.upQuantidade.TabIndex = 4;
             // 
             // dtvProd
             // 
@@ -250,7 +269,7 @@
             this.cbTermo.Location = new System.Drawing.Point(19, 44);
             this.cbTermo.Name = "cbTermo";
             this.cbTermo.Size = new System.Drawing.Size(121, 23);
-            this.cbTermo.TabIndex = 16;
+            this.cbTermo.TabIndex = 1;
             // 
             // label4
             // 
@@ -278,7 +297,7 @@
             this.tabelasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(491, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(491, 29);
             this.menuStrip1.TabIndex = 19;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -286,33 +305,17 @@
             // 
             this.tabelasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.comprasEfectuadasToolStripMenuItem});
+            this.tabelasToolStripMenuItem.Font = new System.Drawing.Font("Leelawadee UI", 12F);
             this.tabelasToolStripMenuItem.Name = "tabelasToolStripMenuItem";
-            this.tabelasToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.tabelasToolStripMenuItem.Size = new System.Drawing.Size(74, 25);
             this.tabelasToolStripMenuItem.Text = "Tabelas";
             // 
             // comprasEfectuadasToolStripMenuItem
             // 
             this.comprasEfectuadasToolStripMenuItem.Name = "comprasEfectuadasToolStripMenuItem";
-            this.comprasEfectuadasToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.comprasEfectuadasToolStripMenuItem.Size = new System.Drawing.Size(221, 26);
             this.comprasEfectuadasToolStripMenuItem.Text = "Compras Efectuadas";
-            // 
-            // txtTel
-            // 
-            this.txtTel.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTel.Location = new System.Drawing.Point(350, 90);
-            this.txtTel.Name = "txtTel";
-            this.txtTel.Size = new System.Drawing.Size(100, 23);
-            this.txtTel.TabIndex = 25;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(276, 96);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(53, 15);
-            this.label9.TabIndex = 24;
-            this.label9.Text = "Telefone";
+            this.comprasEfectuadasToolStripMenuItem.Click += new System.EventHandler(this.ComprasEfectuadasToolStripMenuItem_Click);
             // 
             // F_compra
             // 

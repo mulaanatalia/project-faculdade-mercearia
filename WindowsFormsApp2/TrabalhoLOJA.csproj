@@ -90,6 +90,12 @@
     <Compile Include="F_Produtos.Designer.cs">
       <DependentUpon>F_Produtos.cs</DependentUpon>
     </Compile>
+    <Compile Include="F_tabelaCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_tabelaCompras.Designer.cs">
+      <DependentUpon>F_tabelaCompras.cs</DependentUpon>
+    </Compile>
     <Compile Include="Operacoes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -114,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="F_Produtos.resx">
       <DependentUpon>F_Produtos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_tabelaCompras.resx">
+      <DependentUpon>F_tabelaCompras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
