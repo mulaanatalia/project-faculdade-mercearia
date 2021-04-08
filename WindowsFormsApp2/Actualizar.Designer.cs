@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.upID = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtMarca = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.upPreco = new System.Windows.Forms.NumericUpDown();
             this.button1 = new System.Windows.Forms.Button();
@@ -41,14 +44,11 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.adicionarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtMarca = new System.Windows.Forms.TextBox();
-            this.upID = new System.Windows.Forms.NumericUpDown();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.upID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.upPreco)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtvProduto)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.upID)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -71,6 +71,47 @@
             this.panel2.Size = new System.Drawing.Size(366, 468);
             this.panel2.TabIndex = 14;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel2_Paint);
+            // 
+            // upID
+            // 
+            this.upID.Font = new System.Drawing.Font("Leelawadee UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.upID.Location = new System.Drawing.Point(97, 73);
+            this.upID.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.upID.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.upID.Name = "upID";
+            this.upID.Size = new System.Drawing.Size(163, 27);
+            this.upID.TabIndex = 28;
+            this.upID.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(41, 323);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(94, 21);
+            this.label3.TabIndex = 27;
+            this.label3.Text = "Nova Marca";
+            // 
+            // txtMarca
+            // 
+            this.txtMarca.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMarca.Location = new System.Drawing.Point(143, 320);
+            this.txtMarca.Name = "txtMarca";
+            this.txtMarca.Size = new System.Drawing.Size(215, 29);
+            this.txtMarca.TabIndex = 26;
             // 
             // label2
             // 
@@ -193,47 +234,6 @@
             this.eliminarToolStripMenuItem.Text = "Eliminar";
             this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.EliminarToolStripMenuItem_Click);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(43, 323);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 21);
-            this.label3.TabIndex = 27;
-            this.label3.Text = "Nova Marca";
-            // 
-            // txtMarca
-            // 
-            this.txtMarca.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMarca.Location = new System.Drawing.Point(143, 320);
-            this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Size = new System.Drawing.Size(215, 29);
-            this.txtMarca.TabIndex = 26;
-            // 
-            // upID
-            // 
-            this.upID.Font = new System.Drawing.Font("Leelawadee UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.upID.Location = new System.Drawing.Point(97, 73);
-            this.upID.Maximum = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            0});
-            this.upID.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.upID.Name = "upID";
-            this.upID.Size = new System.Drawing.Size(163, 27);
-            this.upID.TabIndex = 28;
-            this.upID.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
             // F_Actualizar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -248,11 +248,11 @@
             this.Text = "Actualizar";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.upID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.upPreco)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtvProduto)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.upID)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
