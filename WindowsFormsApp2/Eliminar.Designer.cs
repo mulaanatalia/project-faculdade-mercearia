@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtProduto = new System.Windows.Forms.TextBox();
+            this.cbTermo = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dtvProd = new System.Windows.Forms.DataGridView();
@@ -36,10 +40,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.adicionarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.actualizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtProduto = new System.Windows.Forms.TextBox();
-            this.cbTermo = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtvProd)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -60,82 +60,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(356, 468);
             this.panel1.TabIndex = 13;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Honeydew;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(252, 94);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(92, 35);
-            this.button1.TabIndex = 26;
-            this.button1.Text = "Procurar";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Red;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(252, 416);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(92, 35);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Eliminar";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.Button2_Click);
-            // 
-            // dtvProd
-            // 
-            this.dtvProd.AllowUserToDeleteRows = false;
-            this.dtvProd.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.dtvProd.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dtvProd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtvProd.Location = new System.Drawing.Point(15, 133);
-            this.dtvProd.Name = "dtvProd";
-            this.dtvProd.ReadOnly = true;
-            this.dtvProd.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtvProd.Size = new System.Drawing.Size(329, 264);
-            this.dtvProd.TabIndex = 16;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Leelawadee UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(20, 7);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(87, 30);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Eliminar";
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Font = new System.Drawing.Font("Leelawadee UI", 10F, System.Drawing.FontStyle.Bold);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.adicionarToolStripMenuItem,
-            this.actualizarToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(380, 27);
-            this.menuStrip1.TabIndex = 14;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // adicionarToolStripMenuItem
-            // 
-            this.adicionarToolStripMenuItem.Name = "adicionarToolStripMenuItem";
-            this.adicionarToolStripMenuItem.Size = new System.Drawing.Size(86, 23);
-            this.adicionarToolStripMenuItem.Text = "Adicionar";
-            this.adicionarToolStripMenuItem.Click += new System.EventHandler(this.AdicionarToolStripMenuItem_Click);
-            // 
-            // actualizarToolStripMenuItem
-            // 
-            this.actualizarToolStripMenuItem.Name = "actualizarToolStripMenuItem";
-            this.actualizarToolStripMenuItem.Size = new System.Drawing.Size(88, 23);
-            this.actualizarToolStripMenuItem.Text = "Actualizar";
-            this.actualizarToolStripMenuItem.Click += new System.EventHandler(this.ActualizarToolStripMenuItem_Click);
             // 
             // label6
             // 
@@ -177,6 +101,86 @@
             this.label4.Size = new System.Drawing.Size(105, 21);
             this.label4.TabIndex = 27;
             this.label4.Text = "Pesquisar por";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Honeydew;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(252, 94);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(92, 35);
+            this.button1.TabIndex = 26;
+            this.button1.Text = "Procurar";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Red;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(252, 416);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(92, 35);
+            this.button2.TabIndex = 13;
+            this.button2.Text = "Eliminar";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
+            // 
+            // dtvProd
+            // 
+            this.dtvProd.AllowUserToAddRows = false;
+            this.dtvProd.AllowUserToDeleteRows = false;
+            this.dtvProd.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dtvProd.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dtvProd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtvProd.Location = new System.Drawing.Point(15, 133);
+            this.dtvProd.MultiSelect = false;
+            this.dtvProd.Name = "dtvProd";
+            this.dtvProd.ReadOnly = true;
+            this.dtvProd.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtvProd.Size = new System.Drawing.Size(329, 264);
+            this.dtvProd.TabIndex = 16;
+            this.dtvProd.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtvProd_CellClick);
+            this.dtvProd.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtvProd_CellEnter);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Leelawadee UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(20, 7);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(87, 30);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Eliminar";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Font = new System.Drawing.Font("Leelawadee UI", 10F, System.Drawing.FontStyle.Bold);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.adicionarToolStripMenuItem,
+            this.actualizarToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(380, 27);
+            this.menuStrip1.TabIndex = 14;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // adicionarToolStripMenuItem
+            // 
+            this.adicionarToolStripMenuItem.Name = "adicionarToolStripMenuItem";
+            this.adicionarToolStripMenuItem.Size = new System.Drawing.Size(86, 23);
+            this.adicionarToolStripMenuItem.Text = "Adicionar";
+            this.adicionarToolStripMenuItem.Click += new System.EventHandler(this.AdicionarToolStripMenuItem_Click);
+            // 
+            // actualizarToolStripMenuItem
+            // 
+            this.actualizarToolStripMenuItem.Name = "actualizarToolStripMenuItem";
+            this.actualizarToolStripMenuItem.Size = new System.Drawing.Size(88, 23);
+            this.actualizarToolStripMenuItem.Text = "Actualizar";
+            this.actualizarToolStripMenuItem.Click += new System.EventHandler(this.ActualizarToolStripMenuItem_Click);
             // 
             // F_Eliminar
             // 

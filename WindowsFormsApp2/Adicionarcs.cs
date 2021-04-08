@@ -42,10 +42,7 @@ namespace WindowsFormsApp2
                 validar.Campo(txtProdNome.Text);
                 validar.Campo(txtProdMarca.Text);
                 validar.Campo(rxtDescricao.Text);
-                if (upPreco.Value <= 0)
-                {
-                    throw new ArgumentException();
-                }
+                validar.celulaSelecionada((int) upPreco.Value);
                 //Adiciona o Produto
                 operacao.adicionarProduto(txtProdNome.Text, (float) upPreco.Value, txtProdMarca.Text, rxtDescricao.Text);
                 //Mensagem de confirmacao

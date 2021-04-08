@@ -42,6 +42,7 @@ namespace WindowsFormsApp2
         public void actualizarProduto(int id, string marcaProd, string nomeProd, float precoProd)
         {
             comando.CommandText = "update produto set prod_nome =@nome, prod_marca =@marca, prod_preco =@preco where prod_cod =@id";
+            comando.Parameters.AddWithValue("@id", id);
             comando.Parameters.AddWithValue("@nome", nomeProd);
             comando.Parameters.AddWithValue("@marca", marcaProd);
             comando.Parameters.AddWithValue("@preco", precoProd);
@@ -62,7 +63,7 @@ namespace WindowsFormsApp2
         }
         public DataTable pegaProdutoId(int id)
         {
-            comando.CommandText = "select prod_nome as Produto, prod_marca as Marca" +
+            comando.CommandText = "select  prod_cod as Codigo, prod_nome as Produto, prod_marca as Marca" +
                 ", prod_descricao as Descricao, prod_preco as Preco from produto where prod_cod ="+id;
             //comando.Parameters.AddWithValue("@id", id);
             DataTable dt = new DataTable();
@@ -83,7 +84,7 @@ namespace WindowsFormsApp2
         }
         public DataTable pegaProdutoNome(string nome)
         {
-            comando.CommandText = "select prod_nome as Produto, prod_marca as Marca" +
+            comando.CommandText = "select prod_cod as Codigo, prod_nome as Produto, prod_marca as Marca" +
                 ", prod_descricao as Descricao, prod_preco as Preco from produto where prod_nome like '" + nome + "%'";
             DataTable dt = new DataTable();
             try

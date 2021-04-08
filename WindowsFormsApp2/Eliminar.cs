@@ -14,6 +14,8 @@ namespace WindowsFormsApp2
     {
         private Validar validar = new Validar();
         private Operacoes operacao = new Operacoes();
+        private int cod_prod;
+        private string prod;
         public F_Eliminar()
         {
             InitializeComponent();
@@ -73,7 +75,29 @@ namespace WindowsFormsApp2
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            //string id = dtvProd.SelectedCells;
+            try
+            {
+                validar.celulaSelecionada(cod_prod);
+                operacao.apagarProduto(cod_prod);
+                MessageBox.Show(operacao.getMensagem, "Sucesso");
+                dtvProd.DataSource = operacao.pegaProdutoNome(prod);//Actualizar a lista de produtos
+            }
+            catch (ArgumentException)
+            {
+                MessageBox.Show("Por favor, primeiro selecione uma celula", "Nao selecionou uma celula", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void DtvProd_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void DtvProd_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            //A seguir vem o codigo para saber o codigo do produto selecionado
+            cod_prod = (int)dtvProd.Rows[e.RowIndex].Cells["Codigo"].Value;
+            prod = dtvProd.Rows[e.RowIndex].Cells["Produto"].Value.ToString();
         }
     }
 }

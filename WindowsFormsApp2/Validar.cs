@@ -10,7 +10,14 @@ namespace WindowsFormsApp2
     {
         public void Campo(string campo)
         {
-            if (campo == "")
+            if (campo.Equals("") || campo==null)
+            {
+                throw new ArgumentException();
+            }
+        }
+        public void celulaSelecionada(int linha)
+        {
+            if (linha <= 0)
             {
                 throw new ArgumentException();
             }

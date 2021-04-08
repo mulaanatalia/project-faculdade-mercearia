@@ -14,6 +14,7 @@ namespace WindowsFormsApp2
     {
         public Validar validar = new Validar();
         private Operacoes operacao = new Operacoes();
+        private string prod;
         public F_Actualizar()
         {
             InitializeComponent();
@@ -47,14 +48,19 @@ namespace WindowsFormsApp2
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            
-            dtvProduto.DataSource = (operacao.pegaProdutoId((int) upID.Value));
-            string prod = (string)dtvProduto.Rows[0].Cells[0].Value;
-            string marca = (string)dtvProduto.Rows[0].Cells[1].Value;
-            txtNome.Text = prod;
-            txtMarca.Text = marca;
-
-            MessageBox.Show(operacao.getMensagem);
+            try
+            {
+                dtvProduto.DataSource = (operacao.pegaProdutoId((int)upID.Value));
+                string prod = (string)dtvProduto.Rows[0].Cells["Produto"].Value;
+                string marca = (string)dtvProduto.Rows[0].Cells["Marca"].Value;
+                txtNome.Text = prod;
+                txtMarca.Text = marca;
+                MessageBox.Show(operacao.getMensagem);
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Nenhum Produto encontrado", "Informacao");
+            }
         }
 
         private void Button3_Click(object sender, EventArgs e)
@@ -63,21 +69,30 @@ namespace WindowsFormsApp2
             {
                 validar.Campo(txtNome.Text);
                 validar.Campo(txtMarca.Text);
-                if (upPreco.Value <= 0)
-                {
-                    throw new ArgumentException();
-                }
+                validar.celulaSelecionada((int) upPreco.Value);
                 int c = (int) MessageBox.Show("Tem a certeza que deseja modificar essas informacoes?", "Aviso!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
                 if (c == 6)
                 {
                     operacao.actualizarProduto((int)upID.Value, txtMarca.Text, txtNome.Text, (float)upPreco.Value);
                     MessageBox.Show(operacao.getMensagem, "Relatorio", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //Actualizar lista de produtos
+                    dtvProduto.DataSource = (operacao.pegaProdutoNome(prod));
                 }
             }
             catch (ArgumentException)
             {
                 MessageBox.Show("Preencha os campos com valores validos", "Campos invalidos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+        }
+
+        private void DtvProduto_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void DtvProduto_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            prod = dtvProduto.Rows[e.RowIndex].Cells["Produto"].Value.ToString();
         }
     }
 }

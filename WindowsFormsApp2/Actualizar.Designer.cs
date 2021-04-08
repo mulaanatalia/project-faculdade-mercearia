@@ -127,6 +127,11 @@
             // 
             this.upPreco.Font = new System.Drawing.Font("Leelawadee UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.upPreco.Location = new System.Drawing.Point(141, 364);
+            this.upPreco.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.upPreco.Name = "upPreco";
             this.upPreco.Size = new System.Drawing.Size(215, 27);
             this.upPreco.TabIndex = 24;
@@ -197,6 +202,8 @@
             this.dtvProduto.Name = "dtvProduto";
             this.dtvProduto.Size = new System.Drawing.Size(345, 100);
             this.dtvProduto.TabIndex = 17;
+            this.dtvProduto.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtvProduto_CellEndEdit);
+            this.dtvProduto.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtvProduto_CellEnter);
             // 
             // label9
             // 
