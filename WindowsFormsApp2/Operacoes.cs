@@ -82,6 +82,25 @@ namespace WindowsFormsApp2
             comando.Parameters.Clear();
             return dt;
         }
+        public DataTable pegaTabela()
+        {
+            comando.CommandText = comando.CommandText = "select prod_cod as Codigo, prod_nome as Produto," +
+                " prod_marca as Marca" +
+                ", prod_descricao as Descricao, prod_preco as Preco from produto";
+            DataTable dt = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter(comando);
+            try
+            {
+                comando.Connection = conexao.Conectar();
+                da.Fill(dt);
+                conexao.Desconectar();
+            }
+            catch (MySqlException)
+            {
+
+            }
+            return dt;
+        }
         public DataTable pegaProdutoNome(string nome)
         {
             comando.CommandText = "select prod_cod as Codigo, prod_nome as Produto, prod_marca as Marca" +
