@@ -79,14 +79,15 @@ namespace WindowsFormsApp2
                 valorPagar = (float)upQuantidade.Value * preco;
                 if (!(string.IsNullOrEmpty(txtCPrimeiroNome.Text) || (string.IsNullOrWhiteSpace(txtCPrimeiroNome.Text))))
                 {
+                    validar.Campo(txtBI.Text);
                     validar.telefone(txtTel.Text);
-                    F_finalizarCompra fc = new F_finalizarCompra(valorPagar,(int) upQuantidade.Value, 
+                    F_finalizarCompra fc = new F_finalizarCompra(cod_prod, valorPagar,(int) upQuantidade.Value, 
                         txtCPrimeiroNome.Text+" "+txtCUltimoNome.Text, txtBI.Text, txtTel.Text);
                     fc.ShowDialog();
                 }
                 else
                 {
-                    F_finalizarCompra fc = new F_finalizarCompra(valorPagar, (int)upQuantidade.Value);
+                    F_finalizarCompra fc = new F_finalizarCompra(cod_prod, valorPagar, (int)upQuantidade.Value);
                     fc.ShowDialog();
                 }
 

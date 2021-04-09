@@ -103,8 +103,13 @@ namespace WindowsFormsApp2
         }
         public DataTable pegaTabelaCompra()
         {
-            comando.CommandText = "select compra_cod as Codigo, compra_quant as Quantidade," +
-                " compra_data as `Data`, compra_valor_recebido as `Valor recebido` from compra";
+            comando.CommandText = "select c.cliente_nome as `Nome do Cliente`," +
+                " p.prod_nome `Produto`,  p.prod_descricao `Descricao do produto`, p.prod_preco `Preço`," +
+                " cp.compra_quant `Quant`, cp.compra_valor_recebido `Valor Recebido`," +
+                " cp.compra_data `Data da Compra` from compra cp " +
+                "left join faz_compra fc on fc.cod_compra = cp.compra_cod" +
+                " left join produto p on fc.cod_prod = p.prod_cod " +
+                "left join cliente c on fc.cod_cliente = c.cliente_cod order by cp.compra_cod asc;";
             DataTable dt = new DataTable();
             try
             {
@@ -176,9 +181,10 @@ namespace WindowsFormsApp2
             comando.Parameters.Clear();
 
         }
-        public void adicionarCompraCompleta(float quant, float vR, string[] nome, string bi, string tel)
+        public void adicionarCompraCompleta(int cod_prod, float quant, float vR, string[] nome, string bi, string tel)
         {
             addCliente(nome, bi, tel);
+            int cliente = 1;
             comando.CommandText = "insert into compra values" +
                 "(default, @quantidade, default, @vRecebido)";
             comando.Parameters.AddWithValue("@quantidade",quant);
@@ -187,6 +193,7 @@ namespace WindowsFormsApp2
             {
                 comando.Connection = conexao.Conectar();
                 comando.ExecuteNonQuery();
+                comando.Dispose();
                 conexao.Desconectar();
                 mensagem = "Compra feita com sucesso";
             }
@@ -195,8 +202,25 @@ namespace WindowsFormsApp2
                 mensagem = "Erro na efectivacao da compra";
             }
             comando.Parameters.Clear();
+            fazCompra(cod_prod, cliente);
         }
-        public void adicionarCompra(int quant, float vR)
+        private void fazCompra(int produto, int cliente)
+        {
+            comando.CommandText = "insert into faz_compra select Max(c.cliente_cod), @produto," +
+                "Max(cp.compra_cod) from cliente as c, produto as p, compra as cp;";
+            comando.Parameters.AddWithValue("@produto", produto);
+            try
+            {
+                comando.Connection = conexao.Conectar();
+                comando.ExecuteNonQuery();
+                conexao.Desconectar();
+            }
+            catch (MySqlException)
+            {
+                mensagem = "Erro ao cadastrar o efeito da compra";
+            }
+        }
+        public void adicionarCompra(int produto, int quant, float vR)
         {
             comando.CommandText = "insert into compra values" +
                 "(default, @quantidade, default, @vRecebido)";
@@ -214,6 +238,7 @@ namespace WindowsFormsApp2
                 mensagem = "Erro na efectivacao da compra";
             }
             comando.Parameters.Clear();
+            fazCompra(produto, 1);//O indice 1 representa um cliente nulo
         }
         private void addCliente(string []n, string bi, string tel)
         {

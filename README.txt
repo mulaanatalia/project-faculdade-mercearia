@@ -25,7 +25,7 @@ e um campo para poder visualizar o produto pesquisado.
 O botao eliminar, elimina o produto encontrado e listado no campo antes descrito.
 O BUTTON2
 Ao clicar no button2 do menu principal, seremos levados a tela F_Compra
-Nesta tela temos uma area para inserir dados do produto e do cliente.
+Nesta tela temos um menu que nos leva que contem que nos leva as tabelas de compras e uma area para inserir dados do produto e do cliente.
 Na area dos dados do produto encontramos uma lista suspensa para escolher o termo de pesquisa e um campo para colocar o termo
 Abaixo destes temos uma area para visualizar os produtos encontrados
 De seguida vemos um campo para especificar a quantidade de produtos a serem obtidos

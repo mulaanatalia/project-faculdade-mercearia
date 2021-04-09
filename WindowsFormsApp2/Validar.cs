@@ -10,7 +10,7 @@ namespace WindowsFormsApp2
     {
         public void Campo(string campo)
         {
-            if (campo.Equals("") || campo==null)
+            if (string.IsNullOrEmpty(campo))
             {
                 throw new ArgumentException();
             }

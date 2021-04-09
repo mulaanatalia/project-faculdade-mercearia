@@ -13,9 +13,9 @@ namespace WindowsFormsApp2
     public partial class F_finalizarCompra : Form
     {
         private Operacoes operacao = new Operacoes();
-        private int quant;
+        private int quant, prod_cod;
         private string nom, bi, tel;
-        public F_finalizarCompra(float vPagar, int quant, string nom, string bi, string tel)
+        public F_finalizarCompra(int prod_cod, float vPagar, int quant, string nom, string bi, string tel)
         {
             InitializeComponent();
             lblVPagar.Text = vPagar.ToString();
@@ -23,9 +23,10 @@ namespace WindowsFormsApp2
             this.quant = quant;
             this.bi = bi;
             this.tel = tel;
+            this.prod_cod = prod_cod;
 
         }
-        public F_finalizarCompra(float vPagar, int quant)
+        public F_finalizarCompra(int prod_cod, float vPagar, int quant)
         {
             InitializeComponent();
             lblVPagar.Text = vPagar.ToString();
@@ -33,7 +34,7 @@ namespace WindowsFormsApp2
             this.quant = quant;
             this.bi = "";
             this.tel = "";
-
+            this.prod_cod = prod_cod;
         }
 
 
@@ -65,11 +66,11 @@ namespace WindowsFormsApp2
                 {
                     if (string.IsNullOrEmpty(this.nom) || string.IsNullOrWhiteSpace(this.nom))
                     {
-                        operacao.adicionarCompra(quant, (float)upVrecebido.Value);
+                        operacao.adicionarCompra(prod_cod, quant, (float)upVrecebido.Value);
                     }
                     else
                     {
-                        operacao.adicionarCompraCompleta(quant, (float)upVrecebido.Value, nom.Split(), bi, tel);
+                        operacao.adicionarCompraCompleta(prod_cod, quant, (float)upVrecebido.Value, nom.Split(), bi, tel);
                     }
                     MessageBox.Show(operacao.getMensagem, "Report", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
