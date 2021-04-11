@@ -210,6 +210,23 @@ namespace WindowsFormsApp2
                 "Max(cp.compra_cod) from cliente as c, produto as p, compra as cp;";
             comando.Parameters.AddWithValue("@produto", produto);
             try
+            { 
+                comando.Connection = conexao.Conectar();
+                comando.ExecuteNonQuery();
+                conexao.Desconectar();
+            }
+            catch (MySqlException)
+            {
+                mensagem = "Erro ao cadastrar o efeito da compra";
+            }
+        }
+        private void fazCompra(int produto)
+        {
+            comando.CommandText = "insert into faz_compra select @cliente, @produto," +
+                "Max(cp.compra_cod) from cliente as c, produto as p, compra as cp;";
+            comando.Parameters.AddWithValue("@produto", produto);
+            comando.Parameters.AddWithValue("@cliente", 1);
+            try
             {
                 comando.Connection = conexao.Conectar();
                 comando.ExecuteNonQuery();
@@ -238,7 +255,7 @@ namespace WindowsFormsApp2
                 mensagem = "Erro na efectivacao da compra";
             }
             comando.Parameters.Clear();
-            fazCompra(produto, 1);//O indice 1 representa um cliente nulo
+            fazCompra(produto);//O indice 1 representa um cliente nulo
         }
         private void addCliente(string []n, string bi, string tel)
         {
